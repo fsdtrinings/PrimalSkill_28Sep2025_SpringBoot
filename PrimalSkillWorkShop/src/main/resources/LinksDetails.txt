@@ -1,0 +1,32 @@
+
+Get		:	test URL
+			http://localhost:6000/app/product/test
+
+Post	:	http://localhost:6000/app/product
+		:	JSON 
+		:
+		{
+   			"productName":"LG-TV-1",
+    		"costPrice":27000,
+    		"sellingPrice":35000,
+    		"category":"TV",
+    		"stocksInHand":7
+		}
+
+		
+Get		:	get the product based on criteria 
+		:	http://localhost:6000/app/product/code/52
+		:	http://localhost:6000/app/product/category/TV
+		
+		
+		
+Put 	:	Commencement of sales
+		:		a) add new record in sales table 
+				b) update the stockInhand in product table
+		:	http://localhost:6000/app/sales/commit?ccode=95&pcode=52&dis=200
+		: request param
+			a) ccode=95 :- any random value ccode is customer code , value will be based on 
+							customer code if customer module integrated
+			b) pcode 	:- product code
+			c) dis		:-	discount amount , it can be zero and optional
+		
